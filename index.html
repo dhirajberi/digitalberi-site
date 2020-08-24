@@ -1,56 +1,346 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Sorry! Website under maintenance</title>
-  </head>
-  <body>
-  	<div class="container">
-  		<h1>Sorry! Website under maintenance</h1>	
-  		<h2 id="demo"></h2>
-  	</div>
+    <title>Digital Beri</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135104115-3"></script>
     <script>
-	// Set the date we're counting down to
-	var countDownDate = new Date("Aug 21, 2020 00:00:00").getTime();
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-135104115-3');
+    </script>
 
-	// Update the count down every 1 second
-	var x = setInterval(function() {
+    <div id="67766-6">
+        <script src="//ads.themoneytizer.com/s/gen.js?type=6"></script>
+        <script src="//ads.themoneytizer.com/s/requestform.js?siteId=67766&formatId=6"></script>
+    </div>
 
-  	// Get today's date and time
-  	var now = new Date().getTime();
-    
-  	// Find the distance between now and the count down date
-  	var distance = countDownDate - now;
-    
-  	// Time calculations for days, hours, minutes and seconds
-  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  	// Output the result in an element with id="demo"
-  	document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    
-  	// If the count down is over, write some text 
-  	if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  	}
-	}, 1000);
-	</script>
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+    <script type="text/javascript" async="true">
+        (function () {
+            var host = window.location.hostname;
+            var element = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var url = 'https://quantcast.mgr.consensu.org'
+                .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+            var uspTries = 0;
+            var uspTriesLimit = 3;
+            element.async = true;
+            element.type = 'text/javascript';
+            element.src = url;
 
+            firstScript.parentNode.insertBefore(element, firstScript);
+
+            function makeStub() {
+                var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                var queue = [];
+                var win = window;
+                var cmpFrame;
+
+                function addFrame() {
+                    var doc = win.document;
+                    var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                    if (!otherCMP) {
+                        if (doc.body) {
+                            var iframe = doc.createElement('iframe');
+
+                            iframe.style.cssText = 'display:none';
+                            iframe.name = TCF_LOCATOR_NAME;
+                            doc.body.appendChild(iframe);
+                        } else {
+                            setTimeout(addFrame, 5);
+                        }
+                    }
+                    return !otherCMP;
+                }
+
+                function tcfAPIHandler() {
+                    var gdprApplies;
+                    var args = arguments;
+
+                    if (!args.length) {
+                        return queue;
+                    } else if (args[0] === 'setGdprApplies') {
+                        if (
+                            args.length > 3 &&
+                            args[2] === 2 &&
+                            typeof args[3] === 'boolean'
+                        ) {
+                            gdprApplies = args[3];
+                            if (typeof args[2] === 'function') {
+                                args[2]('set', true);
+                            }
+                        }
+                    } else if (args[0] === 'ping') {
+                        var retr = {
+                            gdprApplies: gdprApplies,
+                            cmpLoaded: false,
+                            cmpStatus: 'stub'
+                        };
+
+                        if (typeof args[2] === 'function') {
+                            args[2](retr);
+                        }
+                    } else {
+                        queue.push(args);
+                    }
+                }
+
+                function postMessageEventHandler(event) {
+                    var msgIsString = typeof event.data === 'string';
+                    var json = {};
+
+                    try {
+                        if (msgIsString) {
+                            json = JSON.parse(event.data);
+                        } else {
+                            json = event.data;
+                        }
+                    } catch (ignore) { }
+
+                    var payload = json.__tcfapiCall;
+
+                    if (payload) {
+                        window.__tcfapi(
+                            payload.command,
+                            payload.version,
+                            function (retValue, success) {
+                                var returnMsg = {
+                                    __tcfapiReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: payload.callId
+                                    }
+                                };
+                                if (msgIsString) {
+                                    returnMsg = JSON.stringify(returnMsg);
+                                }
+                                event.source.postMessage(returnMsg, '*');
+                            },
+                            payload.parameter
+                        );
+                    }
+                }
+
+                while (win) {
+                    try {
+                        if (win.frames[TCF_LOCATOR_NAME]) {
+                            cmpFrame = win;
+                            break;
+                        }
+                    } catch (ignore) { }
+
+                    if (win === window.top) {
+                        break;
+                    }
+                    win = win.parent;
+                }
+                if (!cmpFrame) {
+                    addFrame();
+                    win.__tcfapi = tcfAPIHandler;
+                    win.addEventListener('message', postMessageEventHandler, false);
+                }
+            };
+
+            if (typeof module !== 'undefined') {
+                module.exports = makeStub;
+            } else {
+                makeStub();
+            }
+
+            var uspStubFunction = function () {
+                var arg = arguments;
+                if (typeof window.__uspapi !== uspStubFunction) {
+                    setTimeout(function () {
+                        if (typeof window.__uspapi !== 'undefined') {
+                            window.__uspapi.apply(window.__uspapi, arg);
+                        }
+                    }, 500);
+                }
+            };
+
+            var checkIfUspIsReady = function () {
+                uspTries++;
+                if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+                    console.warn('USP is not accessible');
+                } else {
+                    clearInterval(uspInterval);
+                }
+            };
+
+            if (typeof window.__uspapi === 'undefined') {
+                window.__uspapi = uspStubFunction;
+                var uspInterval = setInterval(checkIfUspIsReady, 6000);
+            }
+        })();
+    </script>
+    <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+</head>
+
+<body>
+    <!-- Megabanner -->
+    <div class="container my-4">
+        <div id="67766-1">
+            <script src="//ads.themoneytizer.com/s/gen.js?type=1"></script>
+            <script src="//ads.themoneytizer.com/s/requestform.js?siteId=67766&formatId=1"></script>
+        </div>
+    </div>
+    <!-- Megabanner Ends-->
+    <div class="container my-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">DigitalBeri</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.php">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/privacy-policy.php">Privacy Policy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.php">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container my-4">
+            <center>
+                <h1>Fitness Calulator</h1>
+                <p>by digitalberi.com</p>
+                <!-- Top ad and bottom ad rectangle -->
+                <div class="container my-4">
+                    <div class="row">
+                        <div class="col">
+                            <!--Top-->
+                            <div id="67766-2">
+                                <script src="//ads.themoneytizer.com/s/gen.js?type=2"></script>
+                                <script src="//ads.themoneytizer.com/s/requestform.js?siteId=67766&formatId=2"></script>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!--Bottom-->
+                            <div id="67766-19">
+                                <script src="//ads.themoneytizer.com/s/gen.js?type=19"></script>
+                                <script
+                                    src="//ads.themoneytizer.com/s/requestform.js?siteId=67766&formatId=19"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top ad and bottom ad rectangle ends-->
+                <form action="fitness-calculator.php" method="POST">
+                    <table>
+                        <tr>
+                            <th>Age</th>
+                            <td><input type='text' name='age' placeholder='Enter your age' class='form-control'
+                                    required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <td><input type='text' name='gender' placeholder='m or f' class='form-control' required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Height</th>
+                            <td><input type='text' name='height' placeholder='Height in cms' class='form-control'
+                                    required /></td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td><input type='text' name='weight' placeholder='Weight in kgs' class='form-control'
+                                    required /></td>
+                        </tr>
+                        <tr>
+                            <th>Activity</th>
+                            <td>
+                                <select id="cactivity" name="cactivity" class='form-control'>
+                                    <option value="1">Basal Metabolic Rate (BMR)</option>
+                                    <option value="1.2">Sedentary: little or no exercise</option>
+                                    <option value="1.375">Light: exercise 1-3 times/week</option>
+                                    <option value="1.465" selected="">Moderate: exercise 4-5 times/week</option>
+                                    <option value="1.55">Active: daily exercise or intense exercise 3-4 times/week
+                                    </option>
+                                    <option value="1.725">Very Active: intense exercise 6-7 times/week</option>
+                                    <option value="1.9">Extra Active: very intense exercise daily, or physical job
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Goal</th>
+                            <td>
+                                <select id="goal" name="goal" class='form-control'>
+                                    <option value="0">Maintain Weight</option>
+                                    <option value="-500">Weight Loss</option>
+                                    <option value="500">Weight Gain</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type='submit' name='submit' value='Submit'
+                                    class='btn btn-success btn-lg btn-block' /></td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+    </div>
+    <div class="container my-4">
+        <p>This tool helps you to calculate your BMI, BMR, maintenance calories and daily recommended calories to
+            achieve your goal in one click.
+
+            I used the revised Harris benedict equation to calculate BMR.
+
+            So, what are you waiting? Check it out Fitness Calculator.
+
+            If you have any difficulties then you always contact me.</p>
+    </div>
+
+    <!-- Footer Megabanner -->
+	<div class="container my-4">
+    	<div id="67766-28">
+        	<script src="//ads.themoneytizer.com/s/gen.js?type=28"></script>
+        	<script src="//ads.themoneytizer.com/s/requestform.js?siteId=67766&formatId=28"></script>
+    	</div>
+	<div>
+    <!-- Footer Megabanner ends-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
 </html>
